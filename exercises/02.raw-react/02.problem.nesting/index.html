@@ -13,8 +13,26 @@
 			// 🦉 also play around with using the third argument to createElement
 			// for children instead of the children prop...
 			// https://react.dev/reference/react/createElement
-			children: 'Hello World',
-		})
-		ReactDOM.createRoot(rootElement).render(element)
-	</script>
+			children: [
+			React.createElement('span', null, 'Hello'),
+			' ',
+			React.createElement('span', null, 'World')
+			],
+		});
+		const unorderedList = React.createElement('ul', {
+			className: 'sams-food',
+			children: [
+			React.createElement('li', null, 'Green eggs'),
+			React.createElement('li', null, 'Ham'),
+		]
+	});
+	const main = React.createElement('div', {
+		className: 'main',
+		children: [
+			element,
+			unorderedList,
+	]
+	});
+		ReactDOM.createRoot(rootElement).render(main);
+		</script>
 </body>
